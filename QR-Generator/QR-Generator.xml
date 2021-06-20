@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QR-Generator</name>
+    </assembly>
+    <members>
+        <member name="T:QRGenerator.QR">
+            <summary>
+            A QR Code
+            </summary>
+        </member>
+        <member name="M:QRGenerator.QR.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Basic QR generation
+            </summary>
+            <param name="content">The content to display of the QR code</param>
+            <param name="width">The width of the QR code image</param>
+            <param name="height">The height of the QR code image</param>
+        </member>
+        <member name="P:QRGenerator.QR.Width">
+            <summary>
+            The width of the QR code image
+            </summary>
+        </member>
+        <member name="P:QRGenerator.QR.Height">
+            <summary>
+            The height of the QR code image
+            </summary>
+        </member>
+        <member name="P:QRGenerator.QR.Content">
+            <summary>
+            The content to display of the QR code image
+            </summary>
+        </member>
+        <member name="P:QRGenerator.QR.ReserverdBytes">
+            <summary>
+            After <see cref="M:QRGenerator.QR.AsBytes"/> or <seealso cref="M:QRGenerator.QR.AsBytesAsync"/> is called, this is returned.
+            </summary>
+        </member>
+        <member name="M:QRGenerator.QR.AsBytesAsync">
+            <summary>
+            Turns the <see cref="T:System.Net.Http.HttpResponseMessage"/> into a <seealso cref="T:System.Byte"/>[] | Async
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:QRGenerator.QR.AsBytes">
+            <summary>
+            Turns the <see cref="T:System.Net.Http.HttpResponseMessage"/> into a <seealso cref="T:System.Byte"/>[] 
+            </summary>
+            <returns>QR code image as <see cref="T:System.Byte"/>[]</returns>
+        </member>
+        <member name="M:QRGenerator.QR.DownloadAsync(System.String,System.Boolean)">
+            <summary>
+            Download the QR code image, as a file | Async
+            </summary>
+            <param name="output">Where to write the file</param>
+            <param name="overwrite">Overwrite existing file - Set to false by default</param>
+        </member>
+        <member name="M:QRGenerator.QR.Download(System.String,System.Boolean)">
+            <summary>
+            Download the QR code image, as a file
+            </summary>
+            <param name="output">Where to write the file</param>
+            <param name="overwrite">Overwrite existing file - Set to false by default</param>
+        </member>
+        <member name="M:QRGenerator.QR.op_Implicit(System.String)~QRGenerator.QR">
+            <summary>
+            Create a QR code via implicit content
+            </summary>
+            <param name="content"></param>
+        </member>
+    </members>
+</doc>
