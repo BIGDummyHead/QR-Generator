@@ -1,6 +1,8 @@
 # QR Generator
 A wrapper for QR Server, which generates QR codes based on content provided
 
+### Share with your friends!
+![share me](https://github.com/BIGDummyHead/QR-Generator/blob/master/share.jpg)
 
 ## Use
 
@@ -59,7 +61,7 @@ using System.Threading.Tasks;
 
 class Program
 {
-   async Task Main()
+   static async Task Main()
    {
       QR code = new QR("Hello world!");
       await code.DownloadAsync("hello.png");
@@ -75,3 +77,8 @@ Results:
 Other Results:
 
 ![secret](https://github.com/BIGDummyHead/QR-Generator/blob/master/qr_maker_icon.png)
+
+
+## API Used 
+
+[GO QR Code API](http://goqr.me/)
