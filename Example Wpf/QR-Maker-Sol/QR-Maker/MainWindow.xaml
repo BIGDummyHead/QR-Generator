@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QR_Maker"
         mc:Ignorable="d"
         Title="QR Generator" Height="450" Width="800" x:Name="window" SizeChanged="window_SizeChanged" MinWidth="707" MinHeight="434" MaxWidth="1934" MaxHeight="1080">
-    <Grid Background="SlateGray" >
+    <Grid Background="SlateGray" x:Name="colorGrid">
 
         <Image Width="300" Height="300" VerticalAlignment="Bottom" x:Name="qr">
 
@@ -28,6 +28,27 @@
                 Save
             </Button>
         </StackPanel>
+
+        <StackPanel Width="100" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center">
+
+            <TextBlock Text="QR White Color" FontSize="14" FontWeight="DemiBold"/>
+
+            <ComboBox Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="qrWhiteColor">
+
+            </ComboBox>
+
+            <Rectangle Height="10"/>
+
+            <TextBlock Text="QR Black Color" HorizontalAlignment="Left" FontSize="14" FontWeight="DemiBold"/>
+
+            <ComboBox Width="100" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="qrBlackColor">
+
+            </ComboBox>
+
+        </StackPanel>
+        
+        
+        
 
 
 
