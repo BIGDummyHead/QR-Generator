@@ -112,6 +112,7 @@ namespace QR_Maker
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+
             if (string.IsNullOrEmpty(content.Text))
             {
                 MessageBox.Show("You can not generate an empty QR Code!", "Empty QR Code", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -203,7 +204,6 @@ namespace QR_Maker
 
         private void window_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            content.Width = e.NewSize.Width - 116;
 
         }
 
@@ -239,4 +239,78 @@ namespace QR_Maker
         //public Color QRWhite { get; set; }
         public Color Background { get; set; }
     }
+
+    public class SizePercentageConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            double val = (double)value;
+
+            if (parameter == null)
+                return 0.28 * val;
+
+            string[] split = parameter.ToString().Split('.');
+            double parameterDouble = double.Parse(split[0]) + double.Parse(split[1]) / (Math.Pow(10, split[1].Length));
+            return val * parameterDouble;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            // Don't need to implement this
+            return null;
+        }
+    }
+
+    public class Stack : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            double val = (double)value;
+
+            if (parameter == null)
+                return 0.4 * val;
+
+            string[] split = parameter.ToString().Split('.');
+            double parameterDouble = double.Parse(split[0]) + double.Parse(split[1]) / (Math.Pow(10, split[1].Length));
+            return val * parameterDouble;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            // Don't need to implement this
+            return null;
+        }
+    }
+
+    public class FontSizeConvert : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            double over = 0.15 / 2 * (double)value;
+
+            double save = 33;
+            if (over > save)
+                return save;
+            return over;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return null;
+        }
+    }
+
+    public class TextBoxBinder : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return (double)value - 116;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return null;
+        }
+    }
 }
+
