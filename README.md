@@ -1,7 +1,7 @@
 # QR Generator
 A wrapper for QR Server, which generates QR codes based on content provided
 
-### Share with your friends! - Made with - Scan to head to the release tab.
+### Share with your friends! - Made with GUI - Scan to head to the release tab.
 ![share me](https://github.com/BIGDummyHead/QR-Generator/blob/master/share.png)
 
 ## Use
